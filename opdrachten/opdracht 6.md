@@ -28,7 +28,15 @@ Verder gaat het maken van een `food` element hetzelfde als het maken van de snak
         };
     }
     
-Dit ziet er erg ingewikkeld uit, maar het idee is heel simpel: We maken een object op een willekeurige positie ergens in het speelveld.
+Dit ziet er erg ingewikkeld uit, maar het idee is heel simpel: We maken een object op een willekeurige positie ergens in het speelveld. Deze nieuwe functie roepen we vervolgens aan in de `init`-functie:
+
+    function init() {
+        direction = "right";
+        create_snake();
+        create_food();
+        
+        window.onEachFrame(run);
+    }
 
 Vervolgens maken we de `draw_food`-functie. Vervang de `draw_snake`-functie door de volgende code:
 
@@ -51,6 +59,18 @@ Vervolgens maken we de `draw_food`-functie. Vervang de `draw_snake`-functie door
     }
 
 Zie je wat we hier hebben gedaan? In plaats van nogmaals in `draw_food` de `fillRect` en `strokeRect` functies aan te roepen hebben we een nieuwe functie `draw_cell` gemaakt die een enkel blokje tekent. In de `draw_snake`-functie roepen we deze functie nu aan voor elk element van snake en in `draw_food` roepen we dezelfde functie aan voor het `food`-element.
+
+Als laatste moeten we niet vergeten de `draw_food`-functie aan te roepen in de `draw`-functie:
+
+    function draw() {
+        context.fillStyle = "white";
+        context.fillRect(0, 0, width, height);
+        context.strokeStyle = "black";
+        context.strokeRect(0, 0, width, height);
+        
+        draw_snake();
+        draw_food();
+    }
 
 ## Voedsel eten
 
