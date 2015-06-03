@@ -13,19 +13,19 @@ Om bij te kunnen houden waar de snake is en hoe groot hij is hebben we twee nieu
 		snake_array,
 		cellwidth = 10;
 
-De eerste variable, *snake_array*, zal alle delen (we gaan de snake in blokjes tekenen) bewaren en de tweede variable, *cellwidth*, bepaalt hoe groot elk blokje van de snake zal zijn. Zie je dat we bij de variable *snake_array* geen waarde hebben ingevuld? Het is niet verplicht om bij het maken van een variable deze ook meteen een waarde te geven.
-
-## De snake maken
-
-De volgende stap is om de nieuwe variabelen te gebruiken om een snake te maken waarmee je het spel begint. Dit doen we weer in een functie zodat we die aan kunnen roepen wanneer we dat willen:
-
-	function create_snake() {
+De eerste variable, *snake_array*, zal alle delen (we gaan de snake in blokjes tekenen) bewaren en de tweede variable, *cellwidth*, bepaalt hoe groot elk blokje van de snake zal zijn. Zie je dat we bij de variable *snake_array* geen waarde hebben ingevuld? Het is niet verplicht om bij het maken van een variablefunction create_snake() {
 		var length = 5, i;
 		snake_array = [];
 		for (i = length - 1; i >= 0; i--) {
 			snake_array.push({x: i, y: 0});
 		}
-	}
+	} deze ook meteen een waarde te geven.
+
+## De snake maken
+
+De volgende stap is om de nieuwe variabelen te gebruiken om een snake te maken waarmee je het spel begint. Dit doen we weer in een functie zodat we die aan kunnen roepen wanneer we dat willen:
+
+	
 
 We noemen de functie `create_snake`. Het eerste dat we doen is twee variabelen declareren; `length` en `i`. Omdat we deze variabelen declareren binnen de functie `create_snake` zijn ze ook alleen maar binnen die functie beschikbaar. De variable `length` krijgt de waarde `5`. Dit is de beginlengte van de snake.
 

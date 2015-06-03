@@ -6,10 +6,10 @@ De enige applicaties die je nodig hebt is een tekstverwerker om de code te schri
 
 ## Beginsituatie
 
-Je begint met drie bestanden:
+Je begint met vier bestanden:
 
 * **index.html** - Dit is de webpagina waarin de game zal komen.
-* **onrequestframe.js** - Dit is een hulp-script dat we later in de dojo gaan gebruiken. Wat dit bestand doet is geen onderdeel van de dojo.
+* **onrequestframe.js** en **timestamp.js** - Dit zijn twee hulp-scripts die we later in de dojo gaan gebruiken. Wat deze bestanden doen is geen onderdeel van de dojo.
 * **snake.js** - In dit bestand ga je de game maken. Als je hier iets in wijzigt dan kun je het resultaat daarvan bekijken in de browser door index.html te openen.
 
 ## De achtergrond tekenen
