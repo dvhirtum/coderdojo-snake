@@ -4,7 +4,7 @@ Tot nu toe hebben we ons alleen maar met de snake zelf bezig gehouden. Het wordt
 
 ## Voedsel maken
 
-Eerst moeten we voedsel maken voordat de snake het op kan eten. Stap een om dat voor elkaar te krijgen is, zoals zo vaak, een nieuwe `food`-variable maken:
+Eerst moeten we voedsel maken voordat de snake het op kan eten. Stap één om dat voor elkaar te krijgen is, zoals zo vaak, een nieuwe `food`-variable maken:
 
 	var canvas = document.getElementById("canvas"),
 		context = canvas.getContext("2d"),
