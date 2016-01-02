@@ -42,7 +42,7 @@ Om te beginnen zetten we alles tussen haakjes en maken we een functie.
         ...
     }());
     
-Dit is een javascript truckje om te zorgen dat alles wat binnen de accolades ({ en }) staat alleen bekend is binnen de haakjes. Waarom dat handig is, is voor deze dojo niet belangrijk, maar als je dat wilt weten dan kun je het aan je begeleider vragen.
+Dit is een JavaScript trucje om te zorgen dat alles wat binnen de accolades ({ en }) staat alleen bekend is binnen de haakjes. Waarom dat handig is, is voor deze dojo niet belangrijk, maar als je dat wilt weten dan kun je het aan je begeleider vragen.
 
 Hoe een functie precies werkt wordt zodadelijk uitgelegd als we daadwerkelijk gaan tekenen.
 
@@ -67,7 +67,7 @@ Nu we alle nodige variablen hebben, gaan we een functie definieren met de naam *
         ...
     }
 
-Een functie in javascript maak je door eerst het woord function te gebruiken, gevolgd door de naam die je aan de functie wilt geven en twee haakjes. Waar die haakjes voor dienen zul je later nog zien. Voor nu moet je onthouden dat je ze altijd nodig hebt. Tot slot zet je alles wat onderdeel moet zijn van de functie tussen accolades.
+Een functie in JavaScript maak je door eerst het woord function te gebruiken, gevolgd door de naam die je aan de functie wilt geven en twee haakjes. Waar die haakjes voor dienen zul je later nog zien. Voor nu moet je onthouden dat je ze altijd nodig hebt. Tot slot zet je alles wat onderdeel moet zijn van de functie tussen accolades.
 
 De volgende vier regels zijn dus onderdeel van de draw-functie:
 
@@ -88,7 +88,7 @@ We hebben nu een functie gemaakt genaamd *draw*. Maar als we hier stoppen dan ge
 
 	draw();
 
-Een functie aanroepen doe je door de naam van de functie te typen en daarna de haakjes te typen. De `;` aan het einde van de regel is simpelweg bedoeld om tegen javascript te zeggen dat je klaar bent met deze regel.
+Een functie aanroepen doe je door de naam van de functie te typen en daarna de haakjes te typen. De `;` aan het einde van de regel is simpelweg bedoeld om tegen JavaScript te zeggen dat je klaar bent met deze regel.
 
 ## BORING!
 
