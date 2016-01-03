@@ -8,13 +8,13 @@ De enige applicaties die je nodig hebt is een tekstverwerker om de code te schri
 
 Je begint met vier bestanden:
 
-* **index.html** - Dit is de webpagina waarin de game zal komen.
-* **onrequestframe.js** en **timestamp.js** - Dit zijn twee hulp-scripts die we later in de dojo gaan gebruiken. Wat deze bestanden doen is geen onderdeel van de dojo.
-* **snake.js** - In dit bestand ga je de game maken. Als je hier iets in wijzigt dan kun je het resultaat daarvan bekijken in de browser door index.html te openen.
+* `index.html` - Dit is de webpagina waarin de game zal komen.
+* `onrequestframe.js` en `timestamp.js` - Dit zijn twee hulp-scripts die we later in de dojo gaan gebruiken. Wat deze bestanden doen is geen onderdeel van de dojo.
+* `snake.js` - In dit bestand ga je de game maken. Als je hier iets in wijzigt dan kun je het resultaat daarvan bekijken in de browser door `index.html` te openen.
 
 ## De achtergrond tekenen
 
-Het eerste dat we gaan doen is het tekenen van de achtergrond. Voeg daarvoor de volgende code toe aan snake.js:
+Het eerste dat we gaan doen is het tekenen van de achtergrond. Voeg daarvoor de volgende code toe aan `snake.js`:
 
     (function () {
         var canvas = document.getElementById("canvas"),
@@ -32,7 +32,7 @@ Het eerste dat we gaan doen is het tekenen van de achtergrond. Voeg daarvoor de 
         draw();
     }());
     
-Sla de wijzigingen op en open index.html in een webbrowser. Je ziet nu een wit vlak met een zwarte lijn.
+Sla de wijzigingen op en open `index.html` in een webbrowser. Je ziet nu een wit vlak met een zwarte lijn.
 
 ## Hoe werkt het script?
 
@@ -42,7 +42,7 @@ Om te beginnen zetten we alles tussen haakjes en maken we een functie.
         ...
     }());
     
-Dit is een javascript truckje om te zorgen dat alles wat binnen de accolades ({ en }) staat alleen bekend is binnen de haakjes. Waarom dat handig is, is voor deze dojo niet belangrijk, maar als je dat wilt weten dan kun je het aan je begeleider vragen.
+Dit is een JavaScript trucje om te zorgen dat alles wat binnen de accolades ({ en }) staat alleen bekend is binnen de haakjes. Waarom dat handig is, is voor deze dojo niet belangrijk, maar als je dat wilt weten dan kun je het aan je begeleider vragen.
 
 Hoe een functie precies werkt wordt zodadelijk uitgelegd als we daadwerkelijk gaan tekenen.
 
@@ -57,7 +57,7 @@ Vervolgens maken we vier "variabelen":
     
 Een variable is een naampje die we aan een bepaalde waarde kunnen geven, zodat we later naar die waarde kunnen verwijzen via de naam i.p.v. dat we telkens de waarde zelf op moeten zoeken.
 
-De eerste variable, *canvas*, verwijst naar het `canvas`-element in index.html. Dit is een speciaal Html5 element waarmee je tekeningen kan maken op de webpagina. De tweede variable die we nodig hebben is *context*. Dit is een onderdeel van het canvas en dit object bevat de methodes waarmee we daadwerkelijk gaan tekenen. Vervolgens slaan we nog de breedte (*width*) en hoogte (*height*) van het canvas-object op, zodat we die later kunnen gebruiken.
+De eerste variable, *canvas*, verwijst naar het `canvas`-element in `index.html`. Dit is een speciaal Html5 element waarmee je tekeningen kan maken op de webpagina. De tweede variable die we nodig hebben is *context*. Dit is een onderdeel van het canvas en dit object bevat de methodes waarmee we daadwerkelijk gaan tekenen. Vervolgens slaan we nog de breedte (*width*) en hoogte (*height*) van het canvas-object op, zodat we die later kunnen gebruiken.
 
 ### Een functie maken
 
@@ -67,7 +67,7 @@ Nu we alle nodige variablen hebben, gaan we een functie definieren met de naam *
         ...
     }
 
-Een functie in javascript maak je door eerst het woord function te gebruiken, gevolgd door de naam die je aan de functie wilt geven en twee haakjes. Waar die haakjes voor dienen zul je later nog zien. Voor nu moet je onthouden dat je ze altijd nodig hebt. Tot slot zet je alles wat onderdeel moet zijn van de functie tussen accolades.
+Een functie in JavaScript maak je door eerst het woord function te gebruiken, gevolgd door de naam die je aan de functie wilt geven en twee haakjes. Waar die haakjes voor dienen zul je later nog zien. Voor nu moet je onthouden dat je ze altijd nodig hebt. Tot slot zet je alles wat onderdeel moet zijn van de functie tussen accolades.
 
 De volgende vier regels zijn dus onderdeel van de draw-functie:
 
@@ -88,7 +88,7 @@ We hebben nu een functie gemaakt genaamd *draw*. Maar als we hier stoppen dan ge
 
 	draw();
 
-Een functie aanroepen doe je door de naam van de functie te typen en daarna de haakjes te typen. De `;` aan het einde van de regel is simpelweg bedoeld om tegen javascript te zeggen dat je klaar bent met deze regel.
+Een functie aanroepen doe je door de naam van de functie te typen en daarna de haakjes te typen. De `;` aan het einde van de regel is simpelweg bedoeld om tegen JavaScript te zeggen dat je klaar bent met deze regel.
 
 ## BORING!
 

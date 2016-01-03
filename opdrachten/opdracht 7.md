@@ -60,7 +60,7 @@ Nu hoeven we alleen nog maar de score te laten zien. Hiervoor maken we een `draw
         context.fillText(score_text, 5, height - 5);
     }
 
-Als je het tot hier hebt kunnen volgen, dan snap je vast wel wat er hier gebeurt. We maken een tekst met daarin de huidige score en tekenen deze op het scherm met de `fillText`-functie. Kun je zonder de spieken inschatten waar op het scherm de tekst komt te staan?
+Als je het tot hier hebt kunnen volgen, dan snap je vast wel wat er hier gebeurt. We maken een tekst met daarin de huidige score en tekenen deze op het scherm met de `fillText`-functie. Kun je zonder te spieken inschatten waar op het scherm de tekst komt te staan?
 
 Tot slot moeten we de `draw_score`-functie alleen nog aanroepen in de `draw`-functie:
 
