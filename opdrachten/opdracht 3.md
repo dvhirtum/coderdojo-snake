@@ -6,14 +6,16 @@ In deze opdracht ga je leren hoe je de snake kan laten bewegen. Dit wordt best w
 
 Het eerste dat we gaan doen is een functie maken die de positie van de snake kan aanpassen, deze noemen we `update`. Voeg deze functie toe na de `draw`-functie:
 
-	function update() {
-		var nx = snake_array[0].x,
-            tail = snake_array.pop();
-        
-		tail.x = nx + 1;
+```js
+function update() {
+	var nx = snake_array[0].x,
+        tail = snake_array.pop();
+    
+	tail.x = nx + 1;
 
-		snake_array.unshift(tail);
-	}
+	snake_array.unshift(tail);
+}
+```
 
 Deze functie definieert twee variabelen, `nx` en `tail`. De eerste variable is de x-coordinaat van het eerste element in `snake_array` en de tweede variable is het laatste element uit `snake_array`. Belangrijk om te weten is dat de functie die we gebruiken om het laatste element te vinden, `pop`, niet alleen het element terug geeft, maar deze ook verwijdert uit de array.
 
@@ -27,23 +29,27 @@ Een game loop maak je door een functie te maken die heel vaak opnieuw wordt aang
 
 Om dit voor elkaar te krijgen vervang je de volgende code:
 
-	create_snake();
-	draw();
+```js
+create_snake();
+draw();
+```
 
 met:
 
-    function run() {
-        update();
-        draw();
-    }
-    
-    function init() {
-        create_snake();
-        
-        window.onEachFrame(run);
-    }
+```js
+function run() {
+    update();
+    draw();
+}
 
-	init();
+function init() {
+    create_snake();
+    
+    window.onEachFrame(run);
+}
+
+init();
+```
 
 `run` is de functie die we telkens opnieuw gaan uitvoeren. Deze doet simpelweg wat hierboven beschreven was, namelijk `update` en `draw` aanroepen. Met de `init`-functie kunnen we het spel starten. Deze maakt onze spelobjecten (alleen de snake op dit moment) en start de game loop (door de `run`-functie aan `window.onEachFrame` mee te geven). Tot slot roepen we `init();` aan om het spel te starten.
 
@@ -53,16 +59,18 @@ Kijk maar eens wat er nu gebeurt als je het script opslaat en de webpagina opent
 
 Om de snelheid waarmee `update` aangeroepen wordt aan te passen in de `run`-functie hebben we eerst wat nieuwe variabelen nodig. Deze zetten we bovenaan aan het script bij de rest van de variabelen, zodat deze er zo uit zien:
 
-	var canvas = document.getElementById("canvas"),
-		context = canvas.getContext("2d"),
-		width = canvas.width,
-		height = canvas.height,
-		snake_array,
-		cellwidth = 10,
-        now,
-        last = window.timestamp(),
-        dt = 0,
-        step = 0.05;
+```js
+var canvas = document.getElementById("canvas"),
+	context = canvas.getContext("2d"),
+	width = canvas.width,
+	height = canvas.height,
+	snake_array,
+	cellwidth = 10,
+    now,
+    last = window.timestamp(),
+    dt = 0,
+    step = 0.05;
+```
 
 De nieuwe variabelen gaan we als volgt gebruiken:
 
@@ -73,19 +81,21 @@ De nieuwe variabelen gaan we als volgt gebruiken:
 
 Om deze nieuwe variabelen te gebruiken passen we de `run`-functie aan:
 
-    function run() {
-        now = window.timestamp();
-        dt = dt + Math.min(1, (now - last) / 1000);
-        
-        while (dt > step) {
-            dt = dt - step;
-            update();
-        }
-        
-        last = now;
-        
-        draw();
+```js
+function run() {
+    now = window.timestamp();
+    dt = dt + Math.min(1, (now - last) / 1000);
+    
+    while (dt > step) {
+        dt = dt - step;
+        update();
     }
+    
+    last = now;
+    
+    draw();
+}
+```
 
 Zoals hierboven is uitgelegd zorgt dit ervoor dat `update` maar 20 keer per seconde wordt aangeroepen, i.p.v. 60 keer. Het mooie is dat we de snelheid van de snake nu kunnen aanpassen door de waarde van de `step`-variable aan te passen. Maken we de waarde van `step` groter, dan gaat de snake langzamer. Maken we de waarde kleiner, dan gaat de snake sneller. Experimenteer maar eens met een paar verschillende waarden en kijk wat er gebeurt.
 

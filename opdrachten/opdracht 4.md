@@ -6,26 +6,30 @@ In deze opdracht ga je leren hoe je de snake kan besturen met de pijltjestoetsen
 
 Om te beginnen hebben we een manier nodig om te bepalen in welke richting de snake beweegt. Daarvoor voegen we een nieuwe variable, `direction`, toe aan de lijst met variabelen aan het begin van het script:
 
-	var canvas = document.getElementById("canvas"),
-		context = canvas.getContext("2d"),
-		width = canvas.width,
-		height = canvas.height,
-		snake_array,
-		cellwidth = 10,
-        now,
-        dt = 0,
-        last = window.timestamp(),
-        step = 0.05,
-        direction;
+```js
+var canvas = document.getElementById("canvas"),
+	context = canvas.getContext("2d"),
+	width = canvas.width,
+	height = canvas.height,
+	snake_array,
+	cellwidth = 10,
+    now,
+    dt = 0,
+    last = window.timestamp(),
+    step = 0.05,
+    direction;
+```
 
 Deze variable geven we in de `init`-functie de beginwaarde *right*:
 
-    function init() {
-        direction = "right";
-        create_snake();
-        
-        window.onEachFrame(run);
-    }
+```js
+function init() {
+    direction = "right";
+    create_snake();
+    
+    window.onEachFrame(run);
+}
+```
 
 Dit zorgt er voor dat de snake naar rechts zal bewegen als het spel begint.
 
@@ -33,26 +37,28 @@ Dit zorgt er voor dat de snake naar rechts zal bewegen als het spel begint.
 
 Vervolgens moeten we de `update`-functie aanpassen om de richting van de snake te veranderen op basis van de waarde van `direction`:
 
-	function update() {
-		var nx = snake_array[0].x,
-            ny = snake_array[0].y,
-            tail = snake_array.pop();
-        
-        if (direction === "right") {
-            nx = nx + 1;
-        } else if (direction === "left") {
-            nx = nx - 1;
-        } else if (direction === "up") {
-            ny = ny - 1;
-        } else if (direction === "down") {
-            ny = ny + 1;
-        }
-        
-		tail.x = nx;
-        tail.y = ny;
+```js
+function update() {
+	var nx = snake_array[0].x,
+        ny = snake_array[0].y,
+        tail = snake_array.pop();
+    
+    if (direction === "right") {
+        nx = nx + 1;
+    } else if (direction === "left") {
+        nx = nx - 1;
+    } else if (direction === "up") {
+        ny = ny - 1;
+    } else if (direction === "down") {
+        ny = ny + 1;
+    }
+    
+	tail.x = nx;
+    tail.y = ny;
 
-		snake_array.unshift(tail);
-	}
+	snake_array.unshift(tail);
+}
+```
 
 Naast de x-positie van het eerste element, `nx`, bewaren we nu ook de y-positie in de variable `ny`. Daarna kijken we wat de waarde van `direction` is. Is dit *right* of *left*, dan passen we `nx` aan. Is het *up* of *down*, dan passen we `ny` aan. Tot slot geven we deze x- en y-positie door aan `tail` en voegen deze weer toe aan `snake_array`.
 
@@ -60,19 +66,21 @@ Naast de x-positie van het eerste element, `nx`, bewaren we nu ook de y-positie 
 
 Tot slot willen we de waarde van de variable `direction` kunnen aanpassen met het toetsenbord. Daarvoor moeten we een functie maken die wordt aangeroepen als de gebruiker een toets indrukt. Voeg de volgende code toe, onder de `init`-functie, maar boven de `init();` aanroep:
 
-    document.onkeydown = function (e) {
-        var key = e.which;
-        
-        if (key === 37 && direction !== "right") {
-            direction = "left";
-        } else if (key === 38 && direction !== "down") {
-            direction = "up";
-        } else if (key === 39 && direction !== "left") {
-            direction = "right";
-        } else if (key === 40 && direction !== "up") {
-            direction = "down";
-        }
-    };
+```js
+document.onkeydown = function (e) {
+    var key = e.which;
+    
+    if (key === 37 && direction !== "right") {
+        direction = "left";
+    } else if (key === 38 && direction !== "down") {
+        direction = "up";
+    } else if (key === 39 && direction !== "left") {
+        direction = "right";
+    } else if (key === 40 && direction !== "up") {
+        direction = "down";
+    }
+};
+```
 
 Het indrukken van een toets wordt een *event* genoemd. Er zijn allerlei soorten events, niet alleen voor het indrukken van toetsen, maar ook voor het laden van de pagina, het bewegen van de muis en het klikken op links of buttons in de webpagina. Om iets zinnigs te doen met zo'n event moet je een functie maken en die koppelen aan dat event. Dat doen we door de functie aan `document.onkeydown` te geven.
 
